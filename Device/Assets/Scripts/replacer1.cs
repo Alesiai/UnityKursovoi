@@ -8,6 +8,7 @@ public class replacer1 : MonoBehaviour
     public GameObject Scales;
     public GameObject Device;
     public GameObject Bridge;
+    public GameObject Play;
 
     bool move = false;
     Vector3 startPosition;
@@ -18,7 +19,18 @@ public class replacer1 : MonoBehaviour
     Quaternion needRotaton;
 
 
+    public void PlayMove()
+    {
+        if (!move)
+        {
+            move = true;
+            startPosition = transform.position;
+            startRotation = transform.rotation;
+            needPosition = Play.transform.position;
+            needRotaton = Play.transform.rotation;
+        }
 
+    }
 
     public void Move()
     {
@@ -29,7 +41,6 @@ public class replacer1 : MonoBehaviour
             startRotation = transform.rotation;
             needPosition = Device.transform.position;
             needRotaton =  Device.transform.rotation;
-
         }
 
     }
